@@ -14,4 +14,6 @@
 	#define NULLPATH "/dev/null"
 #endif
 
+extern u64 linewidth_;
+
 #endif

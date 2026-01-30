@@ -105,6 +105,7 @@ static void parseEntry(char **sourcetext, u64 nlines) {
 	char *entryname, *nameseparator;
 	entryname = *sourcetext++;
 	if ((nameseparator = strchr(entryname, ','))) *nameseparator = '\0'; /* Cut name variants */
+	if ((nameseparator = strchr(entryname, ' '))) *nameseparator = '\0';
 
 	usf_listptr *homonyms;
 	if ((homonyms = usf_strhmget(entries_, entryname).p) == NULL) /* entryname is UPPERCASE from source file */
