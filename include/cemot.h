@@ -2,16 +2,16 @@
 #define CEMOT_H
 
 #include <stdio.h>
-#include "usfstd.h"
-#include "usfescape.h"
+#include <unistd.h>
+#include <usfstd.h>
+
+#include "usfaesc.h"
 #include "usfio.h"
 #include "usfmath.h"
 #include "usfhashmap.h"
 #include "usflist.h"
 
-#define PROMPT_STREAM stderr
-#define ANSWER_STREAM stdout
-#define QUERY_STREAM stdin
+#include "main.h"
 
 #define QUERY_PROMPT ">"
 #define QUERY_SIZE 512
@@ -19,7 +19,7 @@
 #define DICT_PATH "dict/littre.txt"
 #define SEPARATOR_QUERY "—————"
 #define SEPARATOR_ENTRY "_____"
-#define NENTRYSECTIONS 3
+#define NENTRYSECTIONS 2
 
 typedef enum Exitcode : i32 {
 	CMT_EXIT_NORMAL,
@@ -34,7 +34,10 @@ typedef struct DictEntry {
 
 } DictEntry;
 
+extern usf_hashmap *entries_;
+
 void cmt_build(char **sourcetext, u64 nlines);
-void cmt_query(void);
+void cmt_prompt(void);
+void cmt_query(char *query);
 
 #endif

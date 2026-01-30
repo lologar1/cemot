@@ -1,1 +1,4 @@
-CEMOT: A C program for querying the Littré French Dictionary
+# CEMOT (CMT)
+Cemot is a small C program for querying the Littré French Dictionary (dict/littre.txt).
+Invoking cemot without any arguments opens interactive mode, while providing one or more words will output their definitions in that order.
+In command-line mode, cemot doesn't provide info output by default, but this can be enabled by specifying the -v flag before word queries. Note that a missing word definition will not warn of its absence if info output is off.
