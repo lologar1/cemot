@@ -10,10 +10,10 @@ USFLIB2_OBJ_DIR := $(USFLIB2_DIR)/obj
 
 CC := gcc
 CFLAGS := -Wall -Wextra -Wunused-macros -Wcast-align -Wduplicated-branches -Wduplicated-cond \
-		  -Wformat-signedness -Wjump-misses-init -Wlogical-op -Wsign-conversion \
-		  -O0 -g
+		  -Wformat-signedness -Wjump-misses-init -Wlogical-op -Wsign-conversion -pedantic \
+		  -std=gnu23 -O2 -g
 INCLUDES := -I$(INC_DIR) -I$(USFLIB2_INC_DIR)
-LINKS := -lm
+LINKS := -lc -lrt -lm
 
 SRCS := $(wildcard $(SRC_DIR)/*.c)
 OBJS := $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))

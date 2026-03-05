@@ -2,16 +2,19 @@
 #define CEMOT_H
 
 #include <stdio.h>
-#include <unistd.h>
-#include <usfstd.h>
 
 #include "usfaesc.h"
-#include "usfio.h"
-#include "usfmath.h"
-#include "usfhashmap.h"
+#include "usfstd.h"
 #include "usflist.h"
+#include "usfhashmap.h"
+#include "usfstring.h"
+#include "usftime.h"
+#include "usfio.h"
 
-#include "main.h"
+#define INFOSTREAM stderr
+#define OUTSTREAM stdout
+#define INSTREAM stdin
+#define NULLPATH "/dev/null"
 
 #define QUERY_PROMPT ">"
 #define QUERY_SIZE 512

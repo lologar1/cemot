@@ -1,4 +1,4 @@
-#include "main.h"
+#include "cemot.h"
 
 static void freeentrylist(void *ptr);
 
@@ -24,7 +24,7 @@ i32 main(i32 nargs, char *argv[]) {
 	else for (i = 1; i < nargs; i++) cmt_query(argv[i]); /* Command-line */
 
 	usf_freetxt(sourcetext, 1); /* usf_ftost */
-	usf_freestrhmfunc(entries_, freeentrylist);
+	usf_freehmfunc(entries_, freeentrylist);
 
 	exit(CMT_EXIT_NORMAL);
 }
